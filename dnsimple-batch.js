@@ -265,7 +265,7 @@ async function updateRecordValueEnsureSpfMechanism(record, spfMech) {
   validateSpf(newValue, record.domain);
   logger.info(`[updateRecordValueEnsureSpfMechanism] ${record.domain} ${record.type} ${record.name||'@'} ${record.content} > ${newValue}`);
   if (commit) {
-    await remoteCall('patch', `${DNSIMPLE_ACCOUNTID}/zones/${domain}/record/${record.id}`, {
+    await remoteCall('PATCH', `${DNSIMPLE_ACCOUNTID}/zones/${record.domain}/records/${record.id}`, {
       content: newValue
     })
   }

@@ -15,7 +15,7 @@ This tool adds that functionality.
 
 ## Sync
 
-This tool operates on a cache of all the domains and records in your account - this is because DNSimple has no way to search across zones/records. So you need to first run the tool with `--sync` to download everything. First, all the domains are downloaded, then each domains records are downloaded one by one. Syncing is subject to the same rate limits.
+This tool operates on a cache of all the domains and records in your account - this is because DNSimple has no way to search across all records. So you need to first run the tool with `--sync` to download everything. First, all the domains are downloaded, then each domain's records are downloaded one by one. Syncing is subject to the same rate limits.
 
 ## DNSimple Rate Limits
 
