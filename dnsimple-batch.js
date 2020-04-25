@@ -211,7 +211,7 @@ function filterRecords(data) {
 async function updateRecordValue(record, value) {
   logger.info(`[updateRecordValue] ${record.type} ${record.name||'@'} ${record.content} > ${value}`);
   if (commit) {
-    await remoteCall('patch', `${DNSIMPLE_ACCOUNTID}/zones/${domain}/record/${record.id}`, {
+    await remoteCall('patch', `${DNSIMPLE_ACCOUNTID}/zones/${domain}/records/${record.id}`, {
       content: value
     })
   }
@@ -221,9 +221,6 @@ function spfAssemble(components) {
   components = components.sort((a,b) => a.sort-b.sort);
   var values = components.map(c => c.content);
   values = values.filter((elem, pos) => values.indexOf(elem) == pos) //unique
-  values = values.filter(v => v != 'include:websites.ca')
-  values = values.filter(v => v != 'include:widepath.io')
-  values = values.filter(v => v != 'include:amazonses.com')
   return values.join(' ');
 }
 
