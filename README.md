@@ -97,7 +97,7 @@ Now let's say you need to update your SPF records, but you want to insert a mech
 
 ## Log Levels
 
-This tool is fairly verbose if you want it to be. If you don't include '--loglevel' then the default log level is 'info'. You can supply 3 log levels:
-* '--loglevel=info': Shows pretty much everything
-* '--loglevel=notice': Only important stuff
-* '--loglevel=error': Only errors - useful for debugging problem
+This tool is fairly verbose if you want it to be. If you don't include `--loglevel` then the default log level is `info`. You can supply 3 log levels:
+* `--loglevel=info`: Shows pretty much everything
+* `--loglevel=notice`: Only important stuff
+* `--loglevel=error`: Only errors - useful for debugging problem
