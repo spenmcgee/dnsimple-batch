@@ -14,7 +14,7 @@ const DNSIMPLE_ACCOUNTID = process.env.DNSIMPLE_ACCOUNTID;
 const argv = minimist(process.argv.slice(2));
 const commit = argv['commit'] ? true : false;
 const throttle = ('throttle' in argv) ? argv['throttle'] : 1500;
-const logLevel = argv['loglevel'] ? argv['loglevel'] : 'notice';
+const logLevel = argv['loglevel'] ? argv['loglevel'] : 'info';
 const cacheFile = path.join(os.homedir(), '.dnsbatch.json')
 
 var logger = winston.createLogger({

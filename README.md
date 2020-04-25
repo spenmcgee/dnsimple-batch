@@ -53,7 +53,7 @@ In the **domain** context, you have the following filters:
 * `--filter-domain-has-records-with-content=<regex>`: Returns only the domains that have at least one record that have a record value matching the supplied regexp.
 * `--filter-domain-has-no-records-with-content=<regex>`: Returns only the domains the DO NOT have ANY records whose values match the supplied regexp.
 
-After filtering, you can insert records for each domain. Simple supply the `type`, `name` and `value` to insert a new record. Default `ttl` and `priority` values will be used.
+After filtering, you can insert records for each domain. Simply supply the `type`, `name` and `value` to insert a new record. Default `ttl` and `priority` values will be used.
 * `--insert-record-type=<type>`
 * `--insert-record-name=<name>`
 * `--insert-record-value=<value>`
@@ -94,3 +94,10 @@ Once you're happy with how it looks, add `--commit`:
 
 Now let's say you need to update your SPF records, but you want to insert a mechanism to the existing record:
 `node dnsimple-batch --filter-record-value='^v=spf1' --update-record-value-ensure-spf-mechanism='include:sendgrid.net'`
+
+## Log Levels
+
+This tool is fairly verbose if you want it to be. If you don't include '--loglevel' then the default log level is 'info'. You can supply 3 log levels:
+* '--loglevel=info': Shows pretty much everything
+* '--loglevel=notice': Only important stuff
+* '--loglevel=error': Only errors - useful for debugging problem
