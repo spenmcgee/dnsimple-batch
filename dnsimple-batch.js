@@ -209,9 +209,9 @@ function filterRecords(data) {
 }
 
 async function updateRecordValue(record, value) {
-  logger.info(`[updateRecordValue] ${record.type} ${record.name||'@'} ${record.content} > ${value}`);
+  logger.info(`[updateRecordValue] ${record.domain} ${record.type} ${record.name||'@'} ${record.content} > ${value}`);
   if (commit) {
-    await remoteCall('patch', `${DNSIMPLE_ACCOUNTID}/zones/${domain}/records/${record.id}`, {
+    await remoteCall('patch', `${DNSIMPLE_ACCOUNTID}/zones/${record.domain}/records/${record.id}`, {
       content: value
     })
   }
@@ -362,6 +362,10 @@ async function main() {
     var recordOps = await recordOperations(data);
     logger.notice(`[main] ${domainOps} domain operations`)
     logger.notice(`[main] ${recordOps} record operations`)
+    if (commit)
+      logger.notice(`[main] Changes were committed`)
+    else
+      logger.notice(`[main] No changes were committed`)
   }
 }
 
