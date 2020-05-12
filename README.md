@@ -1,13 +1,17 @@
 # dnsimple-batch
-A tool to execute dns changes across all your domains &amp; records
+
+A tool to execute dns changes across all your domains &amp; records. Kinda like an account-wide search and replace.
 
 DNSimple is a great tool for DNS, but there isn't a way to search and replace values across all domains/zones/records.
 
 This tool adds that functionality.
 
+For example, if you want to update an IP address for an A record that is spread across many domains, instead of writing an script, you can use this tool.
+
 ## Getting Started
 
 * `git clone https://github.com/widepath/dnsimple-batch`
+* `cd dnsimple-batch`
 * `npm install`
 * `export DNSIMPLE_ACCOUNTID=<yourid>`
 * `export DNSIMPLE_V2_TOKEN=<yourtoken>`
@@ -34,6 +38,7 @@ In any case, if you hit the end of a rate limit window, this tool will sleep unt
 For example, let's say you have 5000 domains and each has 10 records. The max pagination is to return 100 records, so you first use:
 1. 5000/100 = 50 requests to get all the names
 2. Another 5000 requests to get all the domain records
+
 Total requests: 5050
 This means you'll need: ceiling(5050/2400) = 3 rate limit windows
 
@@ -98,6 +103,6 @@ Now let's say you need to update your SPF records, but you want to insert a mech
 ## Log Levels
 
 This tool is fairly verbose if you want it to be. If you don't include `--loglevel` then the default log level is `info`. You can supply 3 log levels:
-* `--loglevel=info`: Shows pretty much everything
-* `--loglevel=notice`: Only important stuff
-* `--loglevel=error`: Only errors - useful for debugging problem
+* `--loglevel=info` Shows pretty much everything
+* `--loglevel=notice` Only important stuff
+* `--loglevel=error` Only errors - useful for debugging problem
