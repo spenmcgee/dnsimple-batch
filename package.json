@@ -1,0 +1,23 @@
+{
+  "name": "dnsimple-batch",
+  "version": "1.0.0",
+  "description": "A tool to execute dns changes across all your domains &amp; records. Kinda like an account-wide search and replace.",
+  "main": "dnsimple-batch.js",
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "moment": "^2.24.0",
+    "request": "^2.88.2",
+    "spf-parse": "^1.0.4",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-widepath:widepath/dnsimple-batch.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
