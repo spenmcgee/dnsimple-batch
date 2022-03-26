@@ -4,7 +4,7 @@
   "description": "A tool to execute dns changes across all your domains &amp; records. Kinda like an account-wide search and replace.",
   "main": "dnsimple-batch.js",
   "dependencies": {
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "moment": "^2.24.0",
     "request": "^2.88.2",
     "spf-parse": "^1.0.4",
